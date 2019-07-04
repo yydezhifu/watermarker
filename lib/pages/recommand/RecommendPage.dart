@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class MinePage extends StatelessWidget {
+class RecommendPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Scaffold(
     appBar: AppBar(
-      title: Text('我的'),
+      title: Text('推荐', style: TextStyle(color: Colors.white)),
     ),
     body: Container(
       child: Center(
