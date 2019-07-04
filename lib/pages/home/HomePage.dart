@@ -27,7 +27,11 @@ class HomePage extends StatelessWidget {
                 TopBanner(),
                 Address(),
                 Support(),
-                Questions()
+                Questions(),
+                Padding(
+                  padding: EdgeInsets.only(top: 5.0, bottom: 60.0),
+                  child: Text('视频归平台及作者所有，本应用不储存任何视频或图片', style: TextStyle(color: Colors.black45)),
+                )
               ],
             ),
           ),

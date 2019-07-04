@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'package:watermark/pages/home/HomePage.dart';
+import 'package:watermark/pages/recommand/RecommendPage.dart';
 import 'package:watermark/pages/mine/MinePage.dart';
 
 void main() => runApp(WaterMarkApp());
@@ -16,7 +17,7 @@ class _WaterMarkAppState extends State<WaterMarkApp> {
 
   List<BottomNavigationBarItem> _navigationViews;
 
-  List<String> appBarTitles = <String>['首页', '我的'];
+  List<String> appBarTitles = <String>['首页', '推荐', '我的'];
 
   @override
   void initState() {
@@ -24,6 +25,7 @@ class _WaterMarkAppState extends State<WaterMarkApp> {
 
     _navigationViews = <BottomNavigationBarItem>[
       BottomNavigationBarItem(icon: const Icon(Icons.home, size: 32.0), title: Text('首页')),
+      BottomNavigationBarItem(icon: const Icon(Icons.subscriptions, size: 32.0), title: Text('推荐')),
       BottomNavigationBarItem(icon: const Icon(Icons.person, size: 32.0), title: Text('我的'))
     ];
   }
@@ -44,7 +46,7 @@ class _WaterMarkAppState extends State<WaterMarkApp> {
       ),
       home: Scaffold(
         body: IndexedStack(
-          children: <Widget>[HomePage(), MinePage()],
+          children: <Widget>[HomePage(), RecommendPage(), MinePage()],
           index: _tabIndex,
         ),
         bottomNavigationBar: BottomNavigationBar(
