@@ -6,10 +6,17 @@ import 'package:watermark/api/response.dart';
 class TApi {
   static const String API_HOST = 'https://vip.svip8.vip';
   static const String API_MENU_DATA = "$API_HOST/getListDsp";
+  static const String API_RECOMMEND_DATA = "$API_HOST/getLikeLink";
 
-  ///获取推荐菜单数据
+  ///获取支持菜单数据
   static getMenuData() async {
     HttpResponse response = await HttpRequest.fetch(API_MENU_DATA);
+    return jsonDecode(response.data);
+  }
+
+  ///获取推荐列表
+  static getRecommendData() async {
+    HttpResponse response = await HttpRequest.fetch(API_RECOMMEND_DATA);
     return jsonDecode(response.data);
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:watermark/pages/recommand/components/recommendlist.dart';
 
 class RecommendPage extends StatelessWidget {
   @override
@@ -6,10 +7,6 @@ class RecommendPage extends StatelessWidget {
     appBar: AppBar(
       title: Text('推荐', style: TextStyle(color: Colors.white)),
     ),
-    body: Container(
-      child: Center(
-        child: Text('我的'),
-      ),
-    ),
+    body: RecommendList()
   );
 }

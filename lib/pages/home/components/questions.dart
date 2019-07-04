@@ -10,13 +10,13 @@ class QA {
 
 class Questions extends StatelessWidget {
 
-  List<QA> _qalist = <QA>[
+  final List<QA> _list = <QA>[
     QA('提取视频下载失败?', '请确认是否为图集，图集可以直接在浏览器中打开链接并长按保存。'),
     QA('提示视频解析失败?', '请尝试在浏览器中打开视频链接，若浏览器无法打开则无法解析。'),
     QA('提取的视频还有水印?', '能解析99%以上视频，但若原作者上传的视频带有水印则无法去除。原视频是否有水印请查看对应app播放时是否有水印。'),
   ];
 
-  List<Widget> getQAList() => _qalist.map((item) => getQAItem(item)).toList();
+  List<Widget> getQAList() => _list.map((item) => getQAItem(item)).toList();
 
   Widget getQAItem(QA item) => Column(
       children: [

@@ -8,10 +8,8 @@ class MinePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Scaffold(
+    backgroundColor: Colors.grey[100],
     body: Container(
-      decoration: BoxDecoration(
-        color: Colors.grey
-      ),
       child: Stack(
         alignment: Alignment.center,
         overflow: Overflow.visible,
@@ -23,13 +21,13 @@ class MinePage extends StatelessWidget {
             ),
           ),
           Positioned(
-            top: 120.0,
+            top: 100.0,
             left: 20.0,
             right: 20.0,
             child: Column(
               children: <Widget>[
                 UserWidget(),
-                SizedBox(height: 15.0),
+                SizedBox(height: 10.0),
                 MenuWidget()
               ],
             ),

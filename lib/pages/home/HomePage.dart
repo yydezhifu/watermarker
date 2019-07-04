@@ -5,6 +5,33 @@ import 'package:watermark/pages/home/components/address.dart';
 import 'package:watermark/pages/home/components/support.dart';
 import 'package:watermark/pages/home/components/questions.dart';
 
+
+class DemoHeader extends SliverPersistentHeaderDelegate {
+  @override
+  Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.white
+      ),
+      child: Column(
+        children: <Widget>[
+          TopBanner(),
+          Address()
+        ],
+      ),
+    );
+  } // 头部展示内容
+
+  @override
+  double get maxExtent => 295.0; // 最大高度
+
+  @override
+  double get minExtent => 295.0; // 最小高度
+
+  @override
+  bool shouldRebuild(SliverPersistentHeaderDelegate oldDelegate) => false; // 因为所有的内容都是固定的，所以不需要更新
+}
+
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -21,19 +48,34 @@ class HomePage extends StatelessWidget {
           decoration: BoxDecoration(
               color: Colors.white
           ),
-          child: SingleChildScrollView(
-            child: Column(
-              children: <Widget>[
-                TopBanner(),
-                Address(),
-                Support(),
-                Questions(),
-                Padding(
-                  padding: EdgeInsets.only(top: 5.0, bottom: 60.0),
-                  child: Text('视频归平台及作者所有，本应用不储存任何视频或图片', style: TextStyle(color: Colors.black45)),
-                )
-              ],
-            ),
+          child: CustomScrollView(
+            slivers: <Widget>[
+//              SliverAppBar(
+//                pinned: true,
+//                forceElevated: true,
+//                expandedHeight: 200.0,
+//                flexibleSpace: FlexibleSpaceBar(
+//                  collapseMode: CollapseMode.parallax,
+//                  title: Text('Expanded Title'),
+//                ),
+//              ),
+              SliverPersistentHeader(
+                pinned: true,
+                delegate: DemoHeader(),
+              ),
+              SliverToBoxAdapter(
+                child: Column(
+                  children: <Widget>[
+                    Support(),
+                    Questions(),
+                    Padding(
+                      padding: EdgeInsets.only(top: 5.0, bottom: 60.0),
+                      child: Text('视频归平台及作者所有，本应用不储存任何视频或图片', style: TextStyle(color: Colors.black45)),
+                    )
+                  ],
+                ),
+              )
+            ],
           ),
         ),
         resizeToAvoidBottomPadding: false,

@@ -5,7 +5,7 @@ class Address extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Container(
-    margin: EdgeInsets.all(20.0),
+    margin: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 10.0),
     height: 55.0,
     child: Form(
       key: _formKey,

@@ -25,7 +25,7 @@ class _WaterMarkAppState extends State<WaterMarkApp> {
 
     _navigationViews = <BottomNavigationBarItem>[
       BottomNavigationBarItem(icon: const Icon(Icons.home, size: 32.0), title: Text('首页')),
-      BottomNavigationBarItem(icon: const Icon(Icons.subscriptions, size: 32.0), title: Text('推荐')),
+      BottomNavigationBarItem(icon: const Icon(Icons.fiber_new, size: 32.0), title: Text('推荐')),
       BottomNavigationBarItem(icon: const Icon(Icons.person, size: 32.0), title: Text('我的'))
     ];
   }
