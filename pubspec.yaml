@@ -44,19 +44,7 @@ flutter:
   uses-material-design: true
 
   assets:
-    - images/bg0.jpeg
-    - images/bg1.jpeg
-    - images/bg2.jpeg
-    - images/douyin.jpeg
-    - images/huoshan.jpg
-    - images/kuaishou.jpg
-    - images/meipai.jpg
-    - images/momo.jpg
-    - images/pipixia.jpg
-    - images/toutiao.jpg
-    - images/weishi.jpg
-    - images/xigua.jpg
-    - images/yingke.jpg
+    - images/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

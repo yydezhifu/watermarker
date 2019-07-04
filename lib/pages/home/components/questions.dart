@@ -46,7 +46,7 @@ class Questions extends StatelessWidget {
               Text('A:',
                   style: TextStyle(
                       color: Colors.pink,
-                      fontSize: 14.0,
+                      fontSize: 16.0,
                       fontWeight: FontWeight.bold
                   )
               ),

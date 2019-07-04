@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
 import 'package:watermark/pages/home/HomePage.dart';
-import 'package:watermark/pages/MinePage.dart';
+import 'package:watermark/pages/mine/MinePage.dart';
 
 void main() => runApp(WaterMarkApp());
 
@@ -21,26 +23,32 @@ class _WaterMarkAppState extends State<WaterMarkApp> {
     super.initState();
 
     _navigationViews = <BottomNavigationBarItem>[
-      BottomNavigationBarItem(icon: const Icon(Icons.home), title: Text('首页')),
-      BottomNavigationBarItem(icon: const Icon(Icons.person), title: Text('我的'))
+      BottomNavigationBarItem(icon: const Icon(Icons.home, size: 32.0), title: Text('首页')),
+      BottomNavigationBarItem(icon: const Icon(Icons.person, size: 32.0), title: Text('我的'))
     ];
   }
 
   final navigatorKey = GlobalKey<NavigatorState>();
+  final SystemUiOverlayStyle _style =SystemUiOverlayStyle(statusBarColor: Colors.transparent);
 
   @override
-  Widget build(BuildContext context) => MaterialApp(
+  Widget build(BuildContext context) {
+
+    SystemChrome.setSystemUIOverlayStyle(_style);
+
+    return MaterialApp(
       navigatorKey: navigatorKey,
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+          primaryColor: Colors.cyan
+      ),
       home: Scaffold(
         body: IndexedStack(
           children: <Widget>[HomePage(), MinePage()],
           index: _tabIndex,
         ),
         bottomNavigationBar: BottomNavigationBar(
-          items: _navigationViews
-              .map((BottomNavigationBarItem navigationView) => navigationView)
-              .toList(),
+          items: _navigationViews.map((BottomNavigationBarItem navigationView) => navigationView).toList(),
           currentIndex: _tabIndex,
           type: BottomNavigationBarType.fixed,
           onTap: (index) {
@@ -50,5 +58,6 @@ class _WaterMarkAppState extends State<WaterMarkApp> {
           },
         ),
       )
-  );
+    );
+  }
 }

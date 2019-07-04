@@ -21,7 +21,7 @@ class Address extends StatelessWidget {
                 ),
                 hintText: '将视频连接粘贴在此处',
                 hintStyle: TextStyle(color: Colors.black54, fontSize: 20.0),
-                contentPadding: EdgeInsets.all(15.0),
+                contentPadding: EdgeInsets.all(13.0),
               ),
               style: TextStyle(fontSize: 20.0),
             )
@@ -32,7 +32,7 @@ class Address extends StatelessWidget {
             child: FlatButton(
               child: Text('解析', style: TextStyle(fontSize: 18.0)),
               onPressed: (){},
-              color: Colors.lightBlue[400],
+              color: Colors.cyan,
               textColor: Colors.white,
               shape: RoundedRectangleBorder(
                 side: BorderSide.none,
