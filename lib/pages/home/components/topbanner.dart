@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 
 class TopBanner extends StatelessWidget {
+
   final List<Widget> imageList = <Widget>[
     Image.asset('images/bg0.jpeg', fit: BoxFit.fitWidth),
     Image.asset('images/bg1.jpeg', fit: BoxFit.fitWidth),
@@ -19,5 +20,7 @@ class TopBanner extends StatelessWidget {
         ),
         scrollDirection: Axis.horizontal,
         autoplay: true,
-      ));
+      )
+  );
+
 }

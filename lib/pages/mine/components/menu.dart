@@ -1,23 +1,17 @@
 import 'package:flutter/material.dart';
-
-class Menu {
-  String image;
-  String title;
-
-  Menu(this.image, this.title);
-}
+import 'package:watermark/pages/mine/model/item_model.dart';
 
 class MenuWidget extends StatelessWidget {
 
-  final List<Menu> _lists = <Menu>[
-    Menu('images/note.png', '会员中心'),
-    Menu('images/book.png', '邀请有礼'),
-    Menu('images/calendar.png', '账号安全'),
-    Menu('images/weather.png', '意见反馈'),
-    Menu('images/clock.png', '设置')
+  final List<Item> _lists = <Item>[
+    Item('images/note.png', '会员中心'),
+    Item('images/book.png', '邀请有礼'),
+    Item('images/calendar.png', '账号安全'),
+    Item('images/weather.png', '意见反馈'),
+    Item('images/clock.png', '设置')
   ];
 
-  Widget getMenuItem(Menu item) => InkWell(
+  Widget getMenuItem(Item item) => InkWell(
     child: ListTile(
       leading: CircleAvatar(
         backgroundImage: AssetImage('${item.image}'),

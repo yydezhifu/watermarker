@@ -1,12 +1,5 @@
 import 'package:flutter/material.dart';
-
-
-class QA {
-  String question;
-  String answer;
-
-  QA(this.question, this.answer);
-}
+import 'package:watermark/pages/home/model/qa_model.dart';
 
 class Questions extends StatelessWidget {
 
