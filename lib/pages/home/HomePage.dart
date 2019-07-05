@@ -6,7 +6,7 @@ import 'package:watermark/pages/home/components/support.dart';
 import 'package:watermark/pages/home/components/questions.dart';
 
 
-class DemoHeader extends SliverPersistentHeaderDelegate {
+class Header extends SliverPersistentHeaderDelegate {
   @override
   Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {
     return Container(
@@ -50,18 +50,9 @@ class HomePage extends StatelessWidget {
           ),
           child: CustomScrollView(
             slivers: <Widget>[
-//              SliverAppBar(
-//                pinned: true,
-//                forceElevated: true,
-//                expandedHeight: 200.0,
-//                flexibleSpace: FlexibleSpaceBar(
-//                  collapseMode: CollapseMode.parallax,
-//                  title: Text('Expanded Title'),
-//                ),
-//              ),
               SliverPersistentHeader(
                 pinned: true,
-                delegate: DemoHeader(),
+                delegate: Header(),
               ),
               SliverToBoxAdapter(
                 child: Column(

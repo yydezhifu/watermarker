@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
+import 'package:watermark/pages/recommand/components/webview.dart';
 import 'package:watermark/pages/recommand/model/recommend_model.dart';
 import 'package:watermark/api/api.dart';
 
@@ -28,11 +28,18 @@ class _RecommendListState extends State<RecommendList> {
   }
 
   Widget buildListData(BuildContext context, Data recommend) => Card(
-    child: ListTile(
-      leading: CircleAvatar(
-        backgroundImage: NetworkImage('${recommend.ico}'),
+    child: InkWell(
+      onTap: (){
+        Navigator.push(context, MaterialPageRoute(
+            builder: (context) => WebViewPage(url: '${recommend.url}', title: '${recommend.title}')
+        ));
+      },
+      child: ListTile(
+          leading: CircleAvatar(
+            backgroundImage: NetworkImage('${recommend.ico}'),
+          ),
+          title: Text('${recommend.title}')
       ),
-      title: Text('${recommend.title}')
     )
   );
 
