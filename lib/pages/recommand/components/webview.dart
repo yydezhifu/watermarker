@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:webview_flutter/webview_flutter.dart';
+import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 
 class WebViewPage extends StatefulWidget {
   final String url;
@@ -26,33 +26,14 @@ class _WebViewState extends State<WebViewPage> {
   }
 
   @override
-  Widget build(BuildContext context) => Scaffold(
+  Widget build(BuildContext context) => WebviewScaffold(
     appBar: AppBar(
-      title: Text(widget.title, style: TextStyle(color: Colors.white)),
+      title: Text('${widget.title}', style: TextStyle(color: Colors.white)),
       iconTheme: IconThemeData(color: Colors.white),
     ),
-    body: Stack(
-      children: <Widget>[
-        WebView(
-          initialUrl: widget.url,
-          onWebViewCreated: (WebViewController web){},
-          onPageFinished: (String value) {
-            setState(() {
-              _isLoading = false;
-            });
-          },
-        ),
-        _loading()
-      ],
-    )
+    url: widget.url,
+    withLocalStorage: true,
+    withJavascript: true,
   );
 
-  _loading() {
-    return _isLoading == true ? Container(
-      decoration: BoxDecoration(color: Colors.white),
-      child: Center(
-        child: CircularProgressIndicator(),
-      ),
-    ) : Text('');
-  }
 }

@@ -11,7 +11,7 @@ class TopBanner extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => SizedBox(
-      height: 200.0,
+      height: 180.0,
       child: Swiper(
         itemBuilder: (BuildContext context, int index) => imageList[index],
         itemCount: 3,

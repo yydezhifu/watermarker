@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:watermark/pages/recommand/components/webview.dart';
 import 'package:watermark/pages/recommand/model/recommend_model.dart';
 import 'package:watermark/api/api.dart';
@@ -21,10 +22,12 @@ class _RecommendListState extends State<RecommendList> {
 
   Future getNewsData() async {
     dynamic recommendJson = await TApi.getRecommendData();
-    Recommend recommendData = Recommend.fromJson(recommendJson);
-    setState(() {
-      _recommendItems = recommendData.data;
-    });
+    if (recommendJson != null) {
+      Recommend recommendData = Recommend.fromJson(recommendJson);
+      setState(() {
+        _recommendItems = recommendData.data;
+      });
+    }
   }
 
   Widget buildListData(BuildContext context, Data recommend) => Card(
@@ -36,7 +39,13 @@ class _RecommendListState extends State<RecommendList> {
       },
       child: ListTile(
           leading: CircleAvatar(
-            backgroundImage: NetworkImage('${recommend.ico}'),
+            child: Container(
+              child: CachedNetworkImage(
+                imageUrl: recommend.ico,
+                placeholder: (context, url) => CupertinoActivityIndicator(),
+                errorWidget: (context, url, error) => Icon(Icons.error),
+              ),
+            ),
           ),
           title: Text('${recommend.title}')
       ),

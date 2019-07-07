@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:watermark/pages/home/model/menu_model.dart';
 import 'package:watermark/api/api.dart';
 
@@ -18,10 +20,12 @@ class _SupportState extends State<Support> {
 
   Future getMenuData() async {
     dynamic menuDataJson = await TApi.getMenuData();
-    Menu menuData = Menu.fromJson(menuDataJson);
-    setState(() {
-      _menuItems = menuData.data;
-    });
+    if (menuDataJson != null) {
+      Menu menuData = Menu.fromJson(menuDataJson);
+      setState(() {
+        _menuItems = menuData.data;
+      });
+    }
   }
 
   List<Widget> getWidgetList() {
@@ -31,8 +35,12 @@ class _SupportState extends State<Support> {
   Widget getItemContainer(Data item) => Container(
       child: Column(
         children: <Widget>[
-          Expanded(child:
-            Image.network("https://vip.svip8.vip"+item.logo, fit: BoxFit.fill)
+          Expanded(
+              child: CachedNetworkImage(
+                imageUrl: "https://vip.svip8.vip${item.logo}",
+                placeholder: (context, url) => CupertinoActivityIndicator(),
+                errorWidget: (context, url, error) => Icon(Icons.error),
+              )
           ),
           SizedBox(height: 5),
           Text('${item.abbreviate}', style: TextStyle(fontSize: 10.0))

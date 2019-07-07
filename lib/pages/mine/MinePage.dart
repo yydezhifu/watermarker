@@ -21,15 +21,15 @@ class MinePage extends StatelessWidget {
             ),
           ),
           Positioned(
-            top: 100.0,
+            top: 100,
             left: 20.0,
             right: 20.0,
             child: Column(
-              children: <Widget>[
-                UserWidget(),
-                SizedBox(height: 10.0),
-                MenuWidget()
-              ],
+                children: <Widget>[
+                  UserWidget(),
+                  SizedBox(height: 10.0),
+                  MenuWidget()
+                ],
             ),
           )
         ],

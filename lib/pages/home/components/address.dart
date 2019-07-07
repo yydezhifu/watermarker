@@ -6,24 +6,23 @@ class Address extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Container(
     margin: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 10.0),
-    height: 55.0,
+    height: 50.0,
     child: Form(
       key: _formKey,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.stretch,
+        mainAxisSize: MainAxisSize.max,
         children: <Widget>[
           Expanded(
             flex: 3,
             child: TextFormField(
               decoration: InputDecoration(
+                labelText: '将视频链接粘贴在此处',
                 border: OutlineInputBorder(
                   borderSide: BorderSide(color: Colors.black12)
                 ),
-                hintText: '将视频连接粘贴在此处',
-                hintStyle: TextStyle(color: Colors.black54, fontSize: 20.0),
-                contentPadding: EdgeInsets.all(13.0),
               ),
-              style: TextStyle(fontSize: 20.0),
+              style: TextStyle(fontSize: 18.0),
             )
           ),
           SizedBox(width: 20),

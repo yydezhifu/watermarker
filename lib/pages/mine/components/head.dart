@@ -6,17 +6,27 @@ class UserWidget extends StatelessWidget {
     alignment: Alignment.topCenter,
     overflow: Overflow.visible,
     children: <Widget>[
-      Card(
+      Container(
+        decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(5.0),
+            boxShadow: [
+              BoxShadow(
+                  color: Colors.grey[300],
+                  blurRadius: 5.0
+              ),
+            ]
+        ),
         child: Column(
           children: <Widget>[
             Padding(
-              padding: EdgeInsets.only(top: 70.0, bottom: 15.0),
+              padding: EdgeInsets.only(top: 60.0, bottom: 10.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Text('13552579258', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25.0)),
+                  Text('13552579258', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0)),
                   SizedBox(width: 10.0),
-                  Image.asset('images/vip.png', width: 30.0)
+                  Image.asset('images/vip.png', width: 20.0)
                 ],
               ),
             ),
@@ -28,7 +38,7 @@ class UserWidget extends StatelessWidget {
                   Expanded(
                     child: Column(
                       children: <Widget>[
-                        Text('5', style: TextStyle(fontSize: 30.0, color: Colors.cyan, fontWeight: FontWeight.bold)),
+                        Text('5', style: TextStyle(fontSize: 25.0, color: Colors.cyan, fontWeight: FontWeight.bold)),
                         SizedBox(height: 5.0),
                         Text('今日剩余解析次数')
                       ],
@@ -41,9 +51,9 @@ class UserWidget extends StatelessWidget {
                   Expanded(
                     child: Column(
                       children: <Widget>[
-                        Text('开通VIP会员', style: TextStyle(fontSize: 25.0, color: Colors.cyan, fontWeight: FontWeight.bold)),
+                        Text('开通VIP会员', style: TextStyle(fontSize: 20.0, color: Colors.cyan, fontWeight: FontWeight.bold)),
                         SizedBox(height: 5.0),
-                        Text('专项无限解析次数')
+                        Text('专享无限解析次数')
                       ],
                     ),
                   ),

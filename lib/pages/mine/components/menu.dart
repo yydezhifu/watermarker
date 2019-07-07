@@ -17,9 +17,10 @@ class MenuWidget extends StatelessWidget {
         backgroundImage: AssetImage('${item.image}'),
         radius: 15.0,
       ),
-      title: Text('${item.title}', style: TextStyle(fontSize: 18.0)),
+      dense: true,
+      title: Text('${item.title}', style: TextStyle(fontSize: 16.0)),
       trailing: Icon(Icons.chevron_right, color: Colors.grey),
-      contentPadding: EdgeInsets.symmetric(vertical: 5.0, horizontal: 15.0),
+      contentPadding: EdgeInsets.symmetric(horizontal: 15.0),
     ),
   );
 
@@ -28,7 +29,17 @@ class MenuWidget extends StatelessWidget {
   }
 
   @override
-  Widget build(BuildContext context) => Card(
+  Widget build(BuildContext context) => Container(
+    decoration: BoxDecoration(
+      color: Colors.white,
+      borderRadius: BorderRadius.circular(5.0),
+      boxShadow: [
+        BoxShadow(
+            color: Colors.grey[300],
+            blurRadius: 5.0
+        ),
+      ]
+    ),
     child: ListView(
       padding: EdgeInsets.only(top: 0.0),
       shrinkWrap: true,
