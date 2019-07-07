@@ -29,7 +29,7 @@ class _SupportState extends State<Support> {
   }
 
   List<Widget> getWidgetList() {
-    return _menuItems == null ? [] : _menuItems.map((item) => getItemContainer(item)).toList();
+    return _menuItems.map((item) => getItemContainer(item)).toList();
   }
 
   Widget getItemContainer(Data item) => Container(
@@ -48,6 +48,27 @@ class _SupportState extends State<Support> {
       )
   );
 
+  Widget getSupports() {
+    if (_menuItems == null) {
+      return Center(
+          child: Padding(
+            padding: EdgeInsets.all(20.0),
+            child: CupertinoActivityIndicator(),
+          )
+      );
+    } else {
+      return GridView.count(
+          physics: NeverScrollableScrollPhysics(),
+          shrinkWrap: true,
+          crossAxisSpacing: 10.0,
+          mainAxisSpacing: 20.0,
+          padding: EdgeInsets.all(10.0),
+          crossAxisCount: 5,
+          children: getWidgetList()
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) => Container(
     padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 35.0),
@@ -61,15 +82,7 @@ class _SupportState extends State<Support> {
       children: <Widget>[
         Text('支持平台', style: TextStyle( color: Colors.black, fontSize: 20.0 )),
         SizedBox(height: 5.0),
-        GridView.count(
-            physics: NeverScrollableScrollPhysics(),
-            shrinkWrap: true,
-            crossAxisSpacing: 10.0,
-            mainAxisSpacing: 20.0,
-            padding: EdgeInsets.all(10.0),
-            crossAxisCount: 5,
-            children: getWidgetList()
-        )
+        getSupports()
       ],
     ),
   );
