@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:watermark/pages/recommand/components/webview.dart';
 import 'package:watermark/pages/recommand/model/recommend_model.dart';
@@ -65,17 +64,11 @@ class _RecommendListState extends State<RecommendList> {
     } else {
       return Stack(
         children: <Widget>[
-          Padding(
-            padding: EdgeInsets.only(bottom: 35.0),
-            child: Center(
-              child: SpinKitFadingCircle(
-                color: Colors.blueAccent,
-                size: 30.0,
-              ),
-            ),
+          Center(
+              child: CupertinoActivityIndicator(radius: 15.0),
           ),
           Padding(
-            padding: EdgeInsets.only(top: 35.0),
+            padding: EdgeInsets.only(top: 70.0),
             child: Center(
               child: Text('正在加载中，莫着急哦~'),
             ),
