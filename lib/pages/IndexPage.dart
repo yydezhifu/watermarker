@@ -15,6 +15,8 @@ class _IndexPageState extends State<IndexPage> {
   int _tabIndex = 0;
   int _lastClickTime = 0;
 
+  final SystemUiOverlayStyle _style = SystemUiOverlayStyle(statusBarColor: Colors.transparent);
+
   List<BottomNavigationBarItem> _navigationViews;
 
   List<String> appBarTitles = <String>['首页', '推荐', '我的'];
@@ -43,8 +45,6 @@ class _IndexPageState extends State<IndexPage> {
       return Future.value(false);
     }
   }
-
-  final SystemUiOverlayStyle _style = SystemUiOverlayStyle(statusBarColor: Colors.transparent);
 
   @override
   Widget build(BuildContext context) {
