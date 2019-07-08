@@ -13,8 +13,6 @@ class WebViewPage extends StatefulWidget {
 
 class _WebViewState extends State<WebViewPage> {
 
-  bool _isLoading = true;
-
   @override
   void initState() {
     super.initState();
