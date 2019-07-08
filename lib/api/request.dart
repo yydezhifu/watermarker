@@ -30,7 +30,7 @@ class HttpRequest {
       }
     }
 
-    ///无网络
+    ///no network
     var connectivityResult = await (Connectivity().checkConnectivity());
     if (connectivityResult == ConnectivityResult.none) {
       return cacheData != null ? HttpResponse(cacheData, true, "请求成功", 200) : HttpResponse("", false, "无网络连接", -1);
