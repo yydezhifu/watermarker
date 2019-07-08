@@ -1,8 +1,6 @@
 import 'dart:convert';
-
 import 'package:watermark/api/request.dart';
 import 'package:watermark/api/response.dart';
-
 import 'package:oktoast/oktoast.dart';
 
 class TApi {

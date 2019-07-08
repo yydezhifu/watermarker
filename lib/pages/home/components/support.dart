@@ -53,7 +53,7 @@ class _SupportState extends State<Support> {
       return Center(
           child: Padding(
             padding: EdgeInsets.all(20.0),
-            child: CupertinoActivityIndicator(),
+            child: CircularProgressIndicator(),
           )
       );
     } else {

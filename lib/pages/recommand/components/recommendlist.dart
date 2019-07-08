@@ -37,16 +37,16 @@ class _RecommendListState extends State<RecommendList> {
         ));
       },
       child: ListTile(
-          leading: CircleAvatar(
-            child: Container(
-              child: CachedNetworkImage(
-                imageUrl: recommend.ico,
-                placeholder: (context, url) => CupertinoActivityIndicator(),
-                errorWidget: (context, url, error) => Icon(Icons.error),
-              ),
+        leading: CircleAvatar(
+          child: Container(
+            child: CachedNetworkImage(
+              imageUrl: recommend.ico,
+              placeholder: (context, url) => CupertinoActivityIndicator(),
+              errorWidget: (context, url, error) => Icon(Icons.error),
             ),
           ),
-          title: Text('${recommend.title}')
+        ),
+        title: Text('${recommend.title}')
       ),
     )
   );
@@ -65,7 +65,7 @@ class _RecommendListState extends State<RecommendList> {
       return Stack(
         children: <Widget>[
           Center(
-              child: CupertinoActivityIndicator(radius: 15.0),
+              child: CircularProgressIndicator(),
           ),
           Padding(
             padding: EdgeInsets.only(top: 70.0),

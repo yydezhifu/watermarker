@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-
 import 'package:watermark/pages/home/components/head.dart';
 import 'package:watermark/pages/home/components/support.dart';
 import 'package:watermark/pages/home/components/questions.dart';
-
 
 class HomePage extends StatelessWidget {
   @override

@@ -1,6 +1,5 @@
 import 'dart:collection';
 import 'dart:convert';
-
 import 'package:dio/dio.dart';
 import 'package:connectivity/connectivity.dart';
 import 'package:watermark/api/response.dart';
