@@ -29,7 +29,7 @@ class _IndexPageState extends State<IndexPage> {
 
   }
 
-  final SystemUiOverlayStyle _style =SystemUiOverlayStyle(statusBarColor: Colors.transparent);
+  final SystemUiOverlayStyle _style = SystemUiOverlayStyle(statusBarColor: Colors.transparent);
 
   @override
   Widget build(BuildContext context) {

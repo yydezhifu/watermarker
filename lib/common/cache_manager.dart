@@ -16,9 +16,7 @@ class CacheManager {
 
   static set(CacheObject cacheObject) async {
     cacheObject.time = DateTime.now().millisecondsSinceEpoch;
-    var cacheObjectList = await db.find({
-      'url': cacheObject.url
-    });
+    var cacheObjectList = await db.find({ 'url': cacheObject.url });
     if (cacheObjectList != null && cacheObjectList.length > 0) {
       await db.update({
         'url': cacheObjectList[0]['url']
@@ -32,9 +30,7 @@ class CacheManager {
   }
 
   static get(String url) async {
-    var cacheObjectList = await db.find({
-      "url": url
-    });
+    var cacheObjectList = await db.find({ "url": url });
     if (cacheObjectList != null && cacheObjectList.length > 0) {
       return cacheObjectList[0];
     }

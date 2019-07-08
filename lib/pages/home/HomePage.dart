@@ -12,10 +12,7 @@ class HomePage extends StatelessWidget {
       onTap: () => FocusScope.of(context).requestFocus(FocusNode()),
       child: Scaffold(
         body: Container(
-          width: MediaQuery
-              .of(context)
-              .size
-              .width,
+          width: MediaQuery.of(context).size.width,
           decoration: BoxDecoration(color: Colors.white),
           child: CustomScrollView(
             slivers: <Widget>[

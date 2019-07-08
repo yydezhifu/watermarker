@@ -45,7 +45,10 @@ class _SplashPageState extends State<SplashPage> {
               child: Padding(
                 padding: const EdgeInsets.all(20.0),
                 child: Text('${DateTime.now().year}@xsk.watermarker.io',
-                  style: TextStyle(color: Colors.black, fontSize: 14.0, fontFamily: "WorkSansMedium")
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 14.0,
+                        fontFamily: "WorkSansMedium")
                 ),
               ),
             ),

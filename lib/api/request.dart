@@ -9,8 +9,7 @@ import 'package:watermark/common/cache_manager.dart';
 class HttpRequest {
   static Dio dio = Dio();
 
-  static Future<HttpResponse> fetch(url, {
-    dynamic params, Map<String, String> header, method = 'get'}) async {
+  static Future<HttpResponse> fetch(url, { dynamic params, Map<String, String> header, method = 'get' }) async {
 
     Map<String, String> headers = HashMap();
 
@@ -39,7 +38,6 @@ class HttpRequest {
     }
 
     Response response;
-
     ///dio request
     try {
       response = await dio.request(url, data: params, options: option);
