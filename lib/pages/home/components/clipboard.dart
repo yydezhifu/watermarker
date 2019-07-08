@@ -17,11 +17,18 @@ class _ClipBoardListenerState extends State<ClipBoardListener> {
   @override
   void initState() {
     super.initState();
-    clipboardTriggerTime = Timer.periodic(Duration(seconds: 5), (timer) {
-      Clipboard.getData(Clipboard.kTextPlain).then(
-        (clipboardContent) => clipboardContentStream.add(clipboardContent.text)
-      );
-    });
+    addListener();
+  }
+
+  addListener () {
+    clipboardTriggerTime = Timer.periodic(
+      Duration(seconds: 5),
+      (timer) {
+        Clipboard.getData(Clipboard.kTextPlain).then(
+          (clipboardContent) => clipboardContentStream.add(clipboardContent.text)
+        );
+      }
+    );
   }
 
   @override
