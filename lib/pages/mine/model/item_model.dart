@@ -1,4 +1,3 @@
-
 class Item {
   String image;
   String title;
